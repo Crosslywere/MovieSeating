@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+const seats = document.querySelectorAll('.row .seat');//:not(.occupied)'); // Selects all seats regardless of if they are occupied.
 const count = document.getElementById('count');
 const price = document.getElementById('price');
 
@@ -69,3 +69,57 @@ movieSelect.addEventListener('change', e => {
 
   updateSelectedSeatsCount();
 });
+
+/********************************
+ | ----Additional code here---- |
+ |      Group 3 - SENG 405      |
+ ********************************/
+
+// Holds the string of the movie
+let currentMovieSlug = '';
+// This function sets the slug to whatever
+const setMovieSlug = () => {
+  currentMovieSlug = '';
+  let movie = movieSelect.options[movieSelect.selectedIndex].text;
+  movie = movie.slice(0, movie.lastIndexOf('$') - 1);
+  movie = movie.trim();
+  movie = movie.split(' ');
+  movie.forEach(word => {
+    currentMovieSlug += word + '-';
+  });
+}
+
+const populateOccupiedSeats = () => {
+  const occupiedSeats = JSON.parse(localStorage.getItem(currentMovieSlug + 'Occupied'));
+  if (occupiedSeats != null && occupiedSeats.length > 0) {
+    seats.forEach((seat, index) => {
+      if (occupiedSeats.indexOf(index) > -1) {
+        seat.classList.remove('selected');
+        seat.classList.add('occupied');
+      }
+    });
+  }
+}
+
+const purchaseSeats = () => {
+  const selectedSeats = container.querySelectorAll('.seat.selected');
+  selectedSeats.forEach(seat => {
+    seat.classList.remove('selected');
+    seat.classList.add('occupied');
+  });
+  const seatIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
+  localStorage.setItem(currentMovieSlug + 'Occupied', JSON.stringify(seatIndex));
+  
+}
+
+const button = document.querySelector('button');
+if (button != null) {
+  button.addEventListener('click', purchaseSeats);
+}
+
+movieSelect.addEventListener('change', () => {
+  setMovieSlug();
+  populateOccupiedSeats();
+});
+setMovieSlug();
+populateOccupiedSeats();
