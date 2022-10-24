@@ -11,9 +11,13 @@ This project has the following capabilities already
     -
     This can be done via a button on the html file. 
 
-* ❌Saving the occupied across sessions
+* ✔️Saving the occupied across sessions
     - 
     Probably through the `localStorage.setItem()` method.
+
+* ❌Loading occupied seats for each movie after switching
+    -
+    Will need to load this after every change event on the movie selector.
 ****
 List any other suggestions
 
