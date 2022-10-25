@@ -83,14 +83,15 @@ const setMovieSlug = () => {
   let movie = movieSelect.options[movieSelect.selectedIndex].text;
   movie = movie.slice(0, movie.lastIndexOf('$') - 1);
   movie = movie.trim();
-  movie = movie.split(' ');
-  movie.forEach(word => {
-    currentMovieSlug += word + '-';
-  });
+  movie.replace(' ', '-');
+  currentMovieSlug = movie;
 }
 
 const populateOccupiedSeats = () => {
   const occupiedSeats = JSON.parse(localStorage.getItem(currentMovieSlug + 'Occupied'));
+
+  seats.forEach(seat => seat.classList.remove('occupied'));
+
   if (occupiedSeats != null && occupiedSeats.length > 0) {
     seats.forEach((seat, index) => {
       if (occupiedSeats.indexOf(index) > -1) {
@@ -112,14 +113,26 @@ const purchaseSeats = () => {
   
 }
 
-const button = document.querySelector('button');
-if (button != null) {
-  button.addEventListener('click', purchaseSeats);
+const reset = () => {
+  localStorage.removeItem(currentMovieSlug + 'Occupied');
+  populateOccupiedSeats();
+}
+
+const purchaseBtn = document.querySelector('#purchase');
+if (purchaseBtn != null) {
+  purchaseBtn.addEventListener('click', purchaseSeats);
+}
+
+const resetBtn = document.querySelector('#reset');
+if (resetBtn != null) {
+  resetBtn.addEventListener('click', reset);
 }
 
 movieSelect.addEventListener('change', () => {
   setMovieSlug();
   populateOccupiedSeats();
 });
+
 setMovieSlug();
+
 populateOccupiedSeats();

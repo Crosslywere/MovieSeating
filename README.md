@@ -15,9 +15,13 @@ This project has the following capabilities already
     - 
     Probably through the `localStorage.setItem()` method.
 
-* ❌Loading occupied seats for each movie after switching
+* ✔️Loading occupied seats for each movie after switching
     -
     Will need to load this after every change event on the movie selector.
+
+* ✔️Resetting seating
+    -
+    Done by using `localStorage.removeItem()` method.
 ****
 List any other suggestions
 
