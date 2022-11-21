@@ -1,0 +1,22 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "This project has the following capabilities already\r 1. Saving of selected seats across browser sessions.\r 2. Automatic selected seat count update.\r 3. Automatic selected seat price update.",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtawusaku/MovieSeatBookingSystem.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtawusaku/MovieSeatBookingSystem/issues"
+  },
+  "homepage": "https://github.com/dtawusaku/MovieSeatBookingSystem#readme",
+  "dependencies": {
+    "login": "^0.8.0"
+  }
+}
