@@ -111,8 +111,6 @@
           >0</span
         >
       </p>
-  
-      <button id="purchase">Purchase seats</button>
     </div>
 
     <!-- Title -->
@@ -146,16 +144,34 @@
 
             <div class="set-button">
               <button id="book">Book</button>
-              <button id="print">Print</button>
-              <button id="reset">Reset</button>
             </div>
-
-
           </form>
+
+          <button id="print" onclick="">Print</button>
+          <button id="reset" onclick="">Reset</button>
+
       </div>
     </div>
 
-    
+    <!-- Hidden div -->
+        <!-- Print out-->
+        <div id="to-print"class="card-c">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMjR41IaNcGcU4Xu6rx4KY0y9VVpsOi6wxGA&usqp=CAU" alt="image" class="movie-image-print">
+          <div class="card-body">
+            <h2>#Ticket No: <span id="">220901</span></h2>
+            <p>
+              <h4>Movie Name: Avengers</h4>
+              <h4>Time: 4:OOpm</h4>
+              <h4>Theatre: </h4>
+              <h4>Seats: A2,A5,A6</h4>
+            </p>
+          </div>
+        </div>
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="print.js" type="text/javascript"></script>
+    <script src="printThis.js" type="text/javascript"></script>
     <script src="script.js" type="text/javascript"></script>
   </body>
 </html>
