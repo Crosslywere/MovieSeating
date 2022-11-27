@@ -113,3 +113,28 @@ p.text {
 p.text span {
   color: #6feaf6;
 }
+
+button, .button {
+  display:block;
+  padding:4px 6px;
+  border: 1px solid black;
+  border-radius:4px;
+  margin:0 4px;
+  background-color:aquamarine;
+}
+
+button:hover, .button:hover {
+  background-color:#353444;
+  color:white;
+  border-color:white;
+}
+
+button:disabled, .button:disabled {
+  background-color:#777;
+}
+
+button:active, .button:active {
+  background-color:#6feaf6;
+  color:black;
+  border-color:black;
+}

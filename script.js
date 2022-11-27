@@ -3,7 +3,7 @@ const seats = document.querySelectorAll('.row .seat');//:not(.occupied)'); // Se
 const count = document.getElementById('count');
 const price = document.getElementById('price');
 
-const movieSelect = document.getElementById('movie');
+const   movieSelect = document.getElementById('movie');
 let ticketPrice = +movieSelect.value;
 
 const populateUI = () => {
@@ -72,7 +72,7 @@ movieSelect.addEventListener('change', e => {
 
 /********************************
  | ----Additional code here---- |
- |      Group 3 - SENG 405      |
+ |      Group 3 - SENG 411      |
  ********************************/
 
 // Holds the string of the movie
@@ -110,14 +110,14 @@ const purchaseSeats = () => {
   });
   const seatIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
   localStorage.setItem(currentMovieSlug + 'Occupied', JSON.stringify(seatIndex));
-  
+  updateSelectedSeatsCount();
 }
-
+// The reset function
 const reset = () => {
   localStorage.removeItem(currentMovieSlug + 'Occupied');
   populateOccupiedSeats();
 }
-
+// Adding event listeners 
 const purchaseBtn = document.querySelector('#purchase');
 if (purchaseBtn != null) {
   purchaseBtn.addEventListener('click', purchaseSeats);
