@@ -15,6 +15,13 @@ const db = mysql.createConnection({
 const publicDirectory = path.join(__dirname,'./public');
 app.use(express.static(publicDirectory));
 
+// Parse URL - encoded bodiees (as sent by HTML forms)
+app.use(express.urlencoded({extended: false}));
+
+//Parse JSON bodies (as sent by API clients)
+app.use(express.json());
+
+// View Engine - ours is hbs
 app.set('view engine', 'hbs');
 
 db.connect( (error) =>{
@@ -27,10 +34,9 @@ db.connect( (error) =>{
 
 // ------------------------------------------------------------
 
-//Routes
-app.get("/",(req,res) =>{
-    res.render("index");
-});
+//Define Routes
+app.use('/', require('./routes/pages'));
+app.use('/auth', require('./routes/auth'));
 
 
 

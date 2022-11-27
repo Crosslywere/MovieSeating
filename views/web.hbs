@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Seat Booking</title>
+
+    <link rel="stylesheet" href="css/web.css">
+    <link type="text/css" rel="stylesheet" href="/css/lightslider.css" />                  
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/lightslider.js"></script>
+
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <!-- Logo -->
+        <a href="" style="color:#fff ;">
+            Movie Seat Booking - Group 3
+        </a>
+
+        <!-- Menu -->
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Now Showing</a></li>
+        </ul>
+    </nav>
+
+    <section id="main">
+        <!-- Shwcase -->
+        <h1 class="showcase-heading">Coming soon</h1>
+
+        <!-- Slider -->
+        <ul id="lightSlider" class="cs-hidden">
+            <!-- Box 1 -->
+            <li class="item-a">
+                <div class="showcase-box">
+                    <img src="/images/wakanda.jpeg" alt="wakanda-forever">
+                </div>
+            </li>
+            <li class="item-b">
+                <div class="showcase-box">
+                    <img src="/images/guardians.jpeg" alt="holiday special">
+                </div>
+            </li>
+            <li class="item-c">
+                <div class="showcase-box">
+                    <img src="/images/spirited.jpeg" alt="spirited">
+                </div>
+            </li>
+            <li class="item-d">
+                <div class="showcase-box">
+                    <img src="/images/souls2.jpeg" alt="alchemy of souls">
+                </div>
+            </li>
+        </ul>
+        
+    </section>
+    <!-- Section 2 -->
+    <!-- Now showing -->
+    <section id="">
+        <!-- Heading -->
+        <h2 class="latest-heading">Now Showing</h2>
+        <!-- Slider -->
+        <ul id="autoWidth" class="cs-hidden">
+            <!-- Box 1 -->
+            <li class="item-a">
+                <div class="latest-box">
+                    <!-- image-container -->
+                    <div class="latest-b-img">
+                        <img src="/images/guardians.jpeg" alt="holiday special">
+                    </div>
+                    <!-- Text -->
+                    <div class="latest-b-text">
+                        <strong>Avengers 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-b">
+                <div class="latest-box">
+                    <!-- image-container -->
+                    <div class="latest-b-img">
+                        <img src="/images/guardians.jpeg" alt="holiday special">
+                    </div>
+                    <!-- Text -->
+                    <div class="latest-b-text">
+                        <strong>Avengers 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-c">
+                <div class="latest-box">
+                    <!-- image-container -->
+                    <div class="latest-b-img">
+                        <img src="/images/guardians.jpeg" alt="holiday special">
+                    </div>
+                    <!-- Text -->
+                    <div class="latest-b-text">
+                        <strong>Avengers 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-d">
+                <div class="latest-box">
+                    <!-- image-container -->
+                    <div class="latest-b-img">
+                        <img src="/images/guardians.jpeg" alt="holiday special">
+                    </div>
+                    <!-- Text -->
+                    <div class="latest-b-text">
+                        <strong>Avengers 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-e">
+                <div class="latest-box">
+                    <!-- image-container -->
+                    <div class="latest-b-img">
+                        <img src="/images/guardians.jpeg" alt="holiday special">
+                    </div>
+                    <!-- Text -->
+                    <div class="latest-b-text">
+                        <strong>Avengers 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-f">
+                <div class="latest-box">
+                    <!-- image-container -->
+                    <div class="latest-b-img">
+                        <img src="/images/guardians.jpeg" alt="holiday special">
+                    </div>
+                    <!-- Text -->
+                    <div class="latest-b-text">
+                        <strong>Avengers 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Slider script -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+        // Slider 1
+          $("#lightSlider").lightSlider(); 
+
+        //Slider 2
+          $("#autoWidth").lightSlider();
+        });
+    </script>
+
+</body>
+</html>
