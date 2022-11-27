@@ -12,7 +12,7 @@ This project has the following capabilities already
     -
     A button on the HTML page is has its 'click' event listener set to the `purchaseSeats()` function. This sets the selected seat to occupied for the current movie selected.
 
-* Saving the occupied across sessions [^1]
+* Saving the occupied across sessions
     - 
     This is done using the localStorage object provided by JavaScript. The movie title is used to generate a slug that is used to save the occupied seat for the current movie.
 
@@ -23,10 +23,3 @@ This project has the following capabilities already
 * Resetting seating
     -
     This is achieved by using the `removeItem()` method in the localStorage object. Because the localStorage is storing items for each movie seperately this resets for only the current movie selected.
-
-----
-#### PurchaseSeats() { #purchase-seats }
-
-The usecase of the modifications could be for a Cinema with a touch screen seat selection and reservation. Where a customer could select seats and have them paid for.
-
-[^1]: (The ==slug== is used when calling the `setItem()` to save it for that particular movie.)
