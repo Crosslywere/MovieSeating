@@ -22,5 +22,8 @@ router.get('/register', (req,res)=>{
     res.render('register');
 });
 
+router.get('/upload', (req,res)=>{
+    res.render('admin/upload');
+});
 
 module.exports = router;

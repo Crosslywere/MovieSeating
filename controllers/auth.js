@@ -1,6 +1,7 @@
 // Imports
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const flash = require('connect-flash');
 
 //Import databse and create connection
 const mysql = require("mysql");
@@ -53,10 +54,10 @@ exports.register = (req, res) =>{
             if(error){
                 console.log(error);
             }else{
-                console.log(results);
-                return res.render('register',{
-                    message: "User registered"
-                });
+
+                //print results in console
+                // console.log(results);
+                return res.redirect('/home');
             }
         });
 
