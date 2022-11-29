@@ -1,7 +1,7 @@
 $(document).ready(function () { 
 
     // Select option change
-    $('#city').change(function () {
+    $('#movie').change(function () {
         var title = $('option:selected').text();
         var price = $('option:selected').val();
         $('#m-price').text(price);

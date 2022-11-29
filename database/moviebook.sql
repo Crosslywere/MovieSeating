@@ -8,20 +8,20 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema moviebook
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema moviebook
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `moviebook` DEFAULT CHARACTER SET utf8 ;
 SHOW WARNINGS;
-USE `mydb` ;
+USE `moviebook` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`movie`
+-- Table `movie`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`movie` (
+CREATE TABLE IF NOT EXISTS `movie` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(100) NOT NULL,
   `description` VARCHAR(500) NOT NULL,
@@ -36,9 +36,9 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `mydb`.`theatre`
+-- Table `theatre`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`theatre` (
+CREATE TABLE IF NOT EXISTS `theatre` (
   `id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `seat_no` INT NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`theatre` (
   INDEX `fk_theatre_movie1_idx` (`movie_id` ASC),
   CONSTRAINT `fk_theatre_movie1`
     FOREIGN KEY (`movie_id`)
-    REFERENCES `mydb`.`movie` (`id`)
+    REFERENCES `movie` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -56,9 +56,9 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `mydb`.`ticket`
+-- Table `ticket`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`ticket` (
+CREATE TABLE IF NOT EXISTS `ticket` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `ticket_id` VARCHAR(45) NULL,
   `movie_id` INT NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ticket` (
   INDEX `fk_ticket_movie_idx` (`movie_id` ASC),
   CONSTRAINT `fk_ticket_movie`
     FOREIGN KEY (`movie_id`)
-    REFERENCES `mydb`.`movie` (`id`)
+    REFERENCES `movie` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -77,9 +77,9 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,

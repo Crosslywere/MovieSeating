@@ -11,7 +11,7 @@
     <div class="big-movie-container">
       <div class="movie-container">
         <label>Select a movie</label>
-        <select name="" id="city">
+        <select name="" id="movie">
           <option value="10">Avengers Endgame</option>\
           <option value="12">Joker</option>
           <option value="8">Toy Story 4</option>
@@ -154,6 +154,7 @@
             </p>
           </form>
           <button id="open">Book</button>
+          <button id="purchase" onclick="">Purchase</button>
           <button id="print" onclick="">Print</button>
           <button id="reset" onclick="">Reset</button>
 
@@ -193,15 +194,20 @@
             $('.model-container').css('transform','scale(0)');
         });
 
-        //Button submit form
+        //Button submit form and purchase seats
         $('#submit_button').click(function(){
-          $('form').submit();
+
+          //submit form 
+          //$('form').submit();
+
+          //purchase button
+          $('#purchase').click();
         });
 
     </script>
     <script src="/js/jquery.js" type="text/javascript"></script>
     <script src="/js/print.js" type="text/javascript"></script>
     <script src="/js/printThis.js" type="text/javascript"></script>
-    <script src="/js/script.js" type="text/javascript"></>
+    <script src="/js/script.js" type="text/javascript"></script>
   </body>
 </html>
