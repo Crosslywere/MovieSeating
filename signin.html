@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bf605740bf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main3.css">
+</head>
+<body>
+    <form class="form1">
+        <h2>MOVIE SEAT BOOKING (Group 3)</h2> <br>
+        <p>Get right back In !</p> <br>
+        <!-- <p>Username: -->
+            <input type="text " id="name" placeholder="Username"> 
+        </p> <br>
+        <!-- <p>password: -->
+            <input type="password" id="password" placeholder="Password">
+        </p> <br>
+      <button>Sign in</button>  <br> <br>
+      <p>Don't have an account? <a href="SignUp.html">Sign Up</a></p>
+    </form>
+    <script>
+       let form= document.querySelector('form')
+       form.onsubmit = submitForm
+
+       function submitForm(e){
+           e.preventDefault()
+            //    alert("form submitted")
+            let users = JSON.parse(localStorage.getItem("users"))
+            let name= document.querySelector("#name").value /*.value to get the value of the whatever name the users outs in*/
+            if( !users.hasOwnProperty(name)){
+                alert('Invalid username')
+                return
+            }
+            //trying your key, name in a variable to access everything in name
+            let userInfo = users[name]
+            // to check if the user has the right password
+            let password = document.querySelector("#password").value
+            if( userInfo.password !== password){      /*corect username but incorrect password*/
+                alert("wrong password")
+                return
+            }
+            sessionStorage.setItem("signedIn", name)
+            window.location.href='./index.html'
+            console.log(users)
+       }
+    </script>
+</body>
+</html>

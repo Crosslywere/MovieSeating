@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bf605740bf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main3.css">
+</head>
+<body>
+    <form>
+<h2>MOVIE SEAT BOOKING (Group 3)</h2> <br>
+        <h3 style="color:rgb(187, 50, 50) ;">Sign Up</h3>
+<br>
+        <input type="text" name="" id="fname" required minlength="3" placeholder="Full name"> <br><br>
+        <input type="text" name="" id="name" required minlength="3" placeholder="Username"> <br><br>
+        <input type="password" name="" id="password" required minlength="5" placeholder="Password"> <br><br>
+        <input type="text" name="" id="email" required minlength="3" placeholder="Email"> <br><br>
+        <button>Sign Up</button> <br> <br>
+        <p>Already have an account? <a href="signin.html">Sign In</a></p>
+    </form>
+    <script>
+       let form= document.querySelector('form')
+       form.onsubmit= submitForm
+       function submitForm(e){
+           e.preventDefault()
+            let name=document.querySelector("#name").value
+            let fname=document.querySelector("#fname").value
+
+            let password=document.querySelector("#password").value
+            let email=document.querySelector("#email").value
+
+            signUpUser(name, password, email, fname)
+       }
+
+
+
+       function signUpUser(username, password, fname, email){
+           if(!localStorage.getItem('users')){
+               localStorage.setItem('users', JSON.stringify({})) /*to signify its an object {} cause the users
+               would be an object holiding users info(pwd, name) in the local storage*/
+           }
+           
+               let users = JSON.parse(localStorage.getItem('users'))
+               if(users.hasOwnProperty(username)){
+                   alert('Sorry Username already exists, try another!')
+                   return
+               }
+               else{
+                   users[username]= {
+                       password:password,
+                       email:email,
+                       fname:fname
+                   }
+                  localStorage.setItem('users', JSON.stringify(users))
+                   alert('user added')
+                   window.location.href='./index.html' 
+               }
+           }
+       
+    
+    </script>
+</body>
+</html>

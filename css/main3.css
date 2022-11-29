@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'League Spartan', sans-serif;
+    
+}
+/* body{
+    background-image: url('../download.jfif');
+    background-attachment: fixed;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* background-color:rgb(22, 21, 21); 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+} */
+body {
+    /* background-color: #242333; */
+    background-image: url("../bentobox.png");
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+  }
+
+form{
+background-color: #000000;
+opacity:90%;
+border-radius: 10px;
+width:100%;
+max-width: 350px;
+padding:3em;
+margin:1em;
+/* flex-direction: column; */
+margin-top:4%; 
+color:white
+
+
+}
+
+p{
+    color: white;
+}
+input{
+    width:90%;
+    max-width: 90%;
+    height:6vh;
+    border-radius: 8px;
+    background-color: rgb(236, 235, 235);
+    border: none;
+    outline: none;
+    padding-left: 3px;
+    font-size: 15px;
+}
+button{
+    width:60%;
+    max-width: 60%;
+    color: white;
+    background-color:grey;
+    /* background-image:linear-gradient( to right,rgb(10, 10, 175),rgb(108, 56, 138),rgb(13, 13, 224)); */
+    
+    height: 7vh;
+    border: none;
+    border-radius: 10px;
+    /* margin-left: 20%; */
+    font-weight:bolder;
+    font-size: 15px;
+    cursor: pointer;
+}
+button:hover{
+     color: white;
+    background-color:rgb(46, 44, 44);
+}
