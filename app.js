@@ -7,12 +7,12 @@ const fileUpload  = require('express-fileupload');
 
 
 const app = express();
-const db = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:'',
-    database:"moviebook",
-});
+// const db = mysql.createConnection({
+//     host:"localhost",
+//     user:"root",
+//     password:'',
+//     database:"moviebook",
+// });
 
 
 //default option
@@ -38,14 +38,14 @@ app.use(flash());
 // View Engine - ours is hbs
 app.set('view engine', 'hbs');
 
-db.connect( (error) =>{
+/* db.connect( (error) =>{
     if(error){
         console.log(error);
     } else{
         console.log("Mysql connected");
     }
 })
-
+ */
 // ------------------------------------------------------------
 
 //Define Routes
@@ -57,6 +57,6 @@ app.use('/upload',require('./routes/upload'));
 
 
 
-
+const db = require("./config/db_config")
 
 app.listen(3000);

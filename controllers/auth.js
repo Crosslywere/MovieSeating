@@ -27,13 +27,15 @@ exports.register = (req, res) =>{
     // Destructuring
     // const {first_name, last_name, email, password,cpassword} = req.body;
 
-    db.query('SELECT email FROM users WHERE email = ?',[email], async(error,results)=>{
+    db.query('SELECT email FROM user WHERE email = ?',[email], async(error,results)=>{
         if(error){
             console.log(error);
+            results(error, null);
+            return 
         }
 
         // Email in use
-        if(results.length > 0){
+        if(results&&results.length > 0){
             return res.render('register', {
                 message: "Email already in use",
             });
@@ -50,7 +52,7 @@ exports.register = (req, res) =>{
 
         console.log(password_hash);
 
-        db.query('INSERT INTO users SET ?', {first_name:fname, last_name:lname, email:email, password:password_hash}, (error,results)=>{
+        db.query('INSERT INTO user SET ?', {first_name:fname, last_name:lname, email:email, password:password_hash}, (error,results)=>{
             if(error){
                 console.log(error);
             }else{

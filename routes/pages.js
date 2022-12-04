@@ -25,5 +25,14 @@ router.get('/register', (req,res)=>{
 router.get('/upload', (req,res)=>{
     res.render('admin/upload');
 });
+router.get('/users', (req,res)=>{
+    res.render('admin/users');
+});
+router.get('/booking', (req,res)=>{
+    res.render('admin/booking');
+});
+router.get('/theatre', (req,res)=>{
+    res.render('admin/theatre');
+});
 
 module.exports = router;
