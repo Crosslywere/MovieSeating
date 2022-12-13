@@ -1,72 +1,66 @@
-# SENG 411 Project - Open Source Development
-## Movie-Seat-Booking
-This is a movie seat booking application ...
-
-## Scope 
-It i limted to 
-
-
-
-## Software stack :computer:
-We adopted the MEAN stack.
-
-<pre>
-M - MySQL
-
-E - Express
-
-A - Angular (excluded)
-
-N - Node js
-</pre>
-
-## Tech stach :computer:
-<ul> 
-  <li>HTML</li>
-  <li>CSS (Vanilla/Bootstrap)</li>
-  <li>Javascript</li>
-  <li>Jquery</li>
-  <li>AJAX</li>
-</ul>
-
-## Features already present:
-This project has the following capabilities already
-1. Saving of selected seats across browser sessions.
-2. Automatic selected seat count update.
-3. Automatic selected seat price update.
-
-## Functionalities and Features added :sparkles: :
-* Setting of selected seats to occupied
-    -
-    A button on the HTML page is has its 'click' event listener set to the `purchaseSeats()` function. This sets the selected seat to occupied for the current movie selected.
-
-* Saving the occupied across sessions
-    - 
-    This is done using the localStorage object provided by JavaScript. The movie title is used to generate a slug that is used to save the occupied seat for the current movie.
-
-* Loading occupied seats for each movie after switching
-    -
-    An event listener, that calls the `setMovieSlug()` and `populateOccupiedSeats()` methods, when ever the field is changed. This causes the currentMovieSlug to be set to that of the current movie then uses the variable to get the occupied seats for that movie and populate the UI with them.
-
-* Resetting seating
-    -
-    This is achieved by using the `removeItem()` method in the localStorage object. Because the localStorage is storing items for each movie seperately this resets for only the current movie selected.
+# Movie-Seat-Booking
+This is an opens-source project.
 
 ## Screenshots of the system
  --insert screenshots --
 
+## Tech stach :computer:
+We adopted the MEVN stack.  It consists of the following four technologies:
+<ul>
+  <li><b>M</b>ongoDB: a popular relational database</li>
+  <li><b>E</b>xpress: a web application framework for Node.js</li>
+  <li><b>V</b>anilla: plain javascript</li>
+  <li><b>N</b>ode.js: a runtime environment for running JavaScript on the server</li>
+</ul>
 
-## Instructions
+### Other thing used
+<ul> 
+  <li>Jquery</li>
+  <li>AJAX</li>
+</ul>
+
+## Prerequisites
+Before you can run this application, you will need to have the following installed on your system:
+
+- Node.js
+- PhpmyAdmin
+## Installation
+1. Clone this repository to your local machine:
+
+   `git clone https://github.com/your-username/mern-stack-application.git`
+
+2. Install the dependencies for the server and client:
+```console 
+$ npm install mysql
+```
+
+    cd mern-stack-application`
+
+    `npm install`
+
+    `cd client`
+
+    `npm install`
+
+3. Install the mysql module for Node.js
+```console 
+$ npm install mysql
+```
+
+
+4. Start the application:
+
+```console 
+$ cd ..
+$ npm run dev
+```
+5. Open a web browser and navigate to http://localhost:3000 to view the application.
+
+
+## Usage
 1. Download thee project
 2. Do this and that.
 
-## Contributors :man_technologist: :woman_technologist: :man_technologist:
-Crosslywire ( [Github](https://github.com/#) ) <br><br>
-dtawusaku ( [Github](https://github.com/#) ) <br><br>
-peter ( [Github](https://github.com/#) ) <br><br>
-great ( [Github](https://github.com/#) ) <br><br>
-source code ( [Github](https://github.com/#) ) <br><br>
-toyio ( [Github](https://github.com/#) ) <br><br>
+## Conrtibutors :man_technologist: :woman_technologist: :man_technologist:
+For 
 
-
-Made with love :heart:, pain :upside_down_face: and suffering :smiley: from Babcock University.
