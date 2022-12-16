@@ -1,0 +1,5 @@
+/.env
+/assests/
+/database/moviebook.sql
+/database/moviebook.mwb
+/database/moviebook.mwb.bak

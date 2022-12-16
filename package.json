@@ -79,6 +79,7 @@
     "minipass": "^3.3.4",
     "minizlib": "^2.1.2",
     "mkdirp": "^1.0.4",
+    "mongoose": "^6.8.0",
     "ms": "^2.0.0",
     "mysql": "^2.18.1",
     "negotiator": "^0.6.3",

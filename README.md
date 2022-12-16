@@ -26,29 +26,22 @@ Before you can run this application, you will need to have the following install
 - PhpmyAdmin
 ## Installation
 1. Clone this repository to your local machine:
-
-   `git clone https://github.com/your-username/mern-stack-application.git`
-
-2. Install the dependencies for the server and client:
 ```console 
-$ npm install mysql
+$ git clone https://github.com/dtawusaku/movie-seat-booking.git
 ```
 
-    cd mern-stack-application`
+2. Install the dependencies for the server and client
+```console 
+$ cd movie-seat-booking
+$ npm install
 
-    `npm install`
-
-    `cd client`
-
-    `npm install`
+```
 
 3. Install the mysql module for Node.js
 ```console 
 $ npm install mysql
 ```
-
-
-4. Start the application:
+4. Start the application
 
 ```console 
 $ cd ..
